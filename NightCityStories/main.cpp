@@ -68,8 +68,8 @@ int main(){
     /* ---------- GAME START ---------- */
     window.draw(splash);
     window.display();
-    std::cout << "GAME IS RUNNING \n";
-    Sleep(3000);
+    std::cout << "GAME IS RUNNING \n \n";
+    Sleep(SPLASH_SHOW_TIME);
     /* -------------------------------- */
 
     /* -------------------- GAME MUSIC -------------------- */
@@ -111,15 +111,15 @@ int main(){
 
         /* ------------------------------------ LINE SYSTEM ------------------------------------ */
         for (int n = startPos; n < startPos + 300; n++){
-            Line& l = lines[(n+1) % N]; //Line &l is reference to each line being drawn
-            l.project(posX - x, 1500, posZ - (n >= N ? N * SEGMENT_LENGTH : 0));
+            Line& currLine = lines[(n+1) % N];
+            currLine.project(posX - x, 1500, posZ - (n >= N ? N * SEGMENT_LENGTH : 0));
 
             x += dx;
-            dx += l.getCurve();
+            dx += currLine.getCurve();
 
-            if (l.getY() >= maxy) continue;
+            if (currLine.getY() >= maxy) continue;
 
-            Line p = lines[n % N]; //previous line
+            Line prevLine = lines[n % N];
 
             /* ------------------------- COLOR OF ROAD, APEX, AND ENVIRONMENT ------------------------- */
             sf::Color environmentC = (n / 5) % 2 ? sf::Color(2, 41, 2) : sf::Color(3, 43, 3);
@@ -128,13 +128,12 @@ int main(){
             /* ---------------------------------------------------------------------------------------- */
 
             /* --------------------------------- DRAWING ROAD, APEX, AND ENVIRONMENT --------------------------------- */
-            createShape environment(window, environmentC, 0, p.getY(), SCREEN_WIDTH, 0, l.getY(), SCREEN_WIDTH);
-            createShape apex(window, apexC, p.getX(), p.getY(), p.getW() * 1.2, l.getX(), l.getY(), l.getW() * 1.2);
-            createShape road(window, roadC, p.getX(), p.getY(), p.getW(), l.getX(), l.getY(), l.getW());
+            createShape environment(window, environmentC, 0, prevLine.getY(), SCREEN_WIDTH, 0, currLine.getY(), SCREEN_WIDTH);
+            createShape apex(window, apexC, prevLine.getX(), prevLine.getY(), prevLine.getW() * 1.2, currLine.getX(), currLine.getY(), currLine.getW() * 1.2);
+            createShape road(window, roadC, prevLine.getX(), prevLine.getY(), prevLine.getW(), currLine.getX(), currLine.getY(), currLine.getW());
             /* ------------------------------------------------------------------------------------------------------- */
         }
         /* ------------------------------------------------------------------------------------- */
-
 
         /* ---------------------------------- DRAW OBSTACLE ---------------------------------- */
         for (int n = startPos + 300; n > startPos; n--) { lines[n % N].drawObstacle(window); }

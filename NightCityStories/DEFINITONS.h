@@ -1,12 +1,12 @@
 #pragma once
 
-#define TITLE "NIGHT CITY STORIES"
+#define TITLE "NIGHT CITY DRIVE"
 
 #define SCREEN_WIDTH 1280
 #define SCREEN_HEIGHT 720
 #define SCREEN_FRAMERATE 60
 
-#define SPLASH_SHOW_TIME 5
+#define SPLASH_SHOW_TIME 3000
 #define SPLASH_BACKGROUND_PATH "textures/splash.jpeg"
 
 #define GAME_MUSIC_PATH "audios/gameLoop.wav"
