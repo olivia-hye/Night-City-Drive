@@ -11,7 +11,7 @@
 
 #define FONT_PATH "fonts/Montserrat-Bold.ttf"
 #define GAME_MUSIC_PATH "audios/gameLoop.wav"
-#define GAME_BACKGROUND_PATH "textures/bg.jpg"
+#define GAME_BACKGROUND_PATH "textures/bg.png"
 #define CLOUD_PATH "textures/cloud.png"
 
 #define CAR_LEFT_PATH "textures/car_left.png"

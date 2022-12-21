@@ -149,7 +149,7 @@
     <Font Include="fonts\Montserrat-Regular.ttf" />
   </ItemGroup>
   <ItemGroup>
-    <Image Include="textures\bg.jpg" />
+    <Image Include="textures\bg.png" />
     <Image Include="textures\bill1.jpg" />
     <Image Include="textures\bill2.jpg" />
     <Image Include="textures\car1.png" />
