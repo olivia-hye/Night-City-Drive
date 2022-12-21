@@ -7,17 +7,17 @@
 #define SCREEN_FRAMERATE 60
 
 #define SPLASH_SHOW_TIME 3000
-#define SPLASH_BACKGROUND_PATH "textures/splash.jpeg"
+#define SPLASH_BACKGROUND_PATH "textures/splash.png"
 
+#define FONT_PATH "fonts/Montserrat-Bold.ttf"
 #define GAME_MUSIC_PATH "audios/gameLoop.wav"
 #define GAME_BACKGROUND_PATH "textures/bg.jpg"
 #define CLOUD_PATH "textures/cloud.png"
 
-#define CAR_LEFT_MAX_PATH "textures/car_left_max.png"
 #define CAR_LEFT_PATH "textures/car_left.png"
 #define CAR_MID_PATH "textures/car_mid.png"
 #define CAR_RIGHT_PATH "textures/car_right.png"
-#define CAR_RIGHT_MAX_PATH "textures/car_right_max.png"
+#define CAR_ENGINE_SOUND "audio/carEngine.wav"
 
 #define OBSTACLE_BILL1_PATH "textures/bill1.jpg"
 #define OBSTACLE_BILL2_PATH "textures/bill2.jpg"

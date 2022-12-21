@@ -13,6 +13,15 @@
       <UniqueIdentifier>{67DA6AB6-F800-4c08-8B7A-83BB121AAD01}</UniqueIdentifier>
       <Extensions>rc;ico;cur;bmp;dlg;rc2;rct;bin;rgs;gif;jpg;jpeg;jpe;resx;tiff;tif;png;wav;mfcribbon-ms</Extensions>
     </Filter>
+    <Filter Include="Resource Files\audio">
+      <UniqueIdentifier>{49f8693b-0bad-43b3-8f2c-dfd72f8c7baf}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\textures">
+      <UniqueIdentifier>{0766b41a-65ba-4dd6-8e32-e4635473ef72}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Resource Files\fonts">
+      <UniqueIdentifier>{ab578fe8-da69-44fc-a16c-a5b51a2f0436}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -32,5 +41,62 @@
     <ClInclude Include="Generator.h">
       <Filter>Header Files</Filter>
     </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <Media Include="audio\click.wav">
+      <Filter>Resource Files\audio</Filter>
+    </Media>
+    <Media Include="audio\gameLoop.wav">
+      <Filter>Resource Files\audio</Filter>
+    </Media>
+    <Media Include="..\..\..\..\Downloads\carEngine.wav">
+      <Filter>Resource Files\audio</Filter>
+    </Media>
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\Montserrat-Bold.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </Font>
+    <Font Include="fonts\Montserrat-Italic.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </Font>
+    <Font Include="fonts\Montserrat-Regular.ttf">
+      <Filter>Resource Files\fonts</Filter>
+    </Font>
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\bg.jpg">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\bill1.jpg">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\bill2.jpg">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\car_left.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\car_mid.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\car_right.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\car1.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\car2.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\tree1.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\tree2.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
+    <Image Include="textures\splash.png">
+      <Filter>Resource Files\textures</Filter>
+    </Image>
   </ItemGroup>
 </Project>

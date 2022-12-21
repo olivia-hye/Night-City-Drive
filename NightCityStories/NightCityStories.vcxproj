@@ -138,6 +138,29 @@
     <ClInclude Include="ProjectionSystem.h" />
     <ClInclude Include="Road.h" />
   </ItemGroup>
+  <ItemGroup>
+    <Media Include="..\..\..\..\Downloads\carEngine.wav" />
+    <Media Include="audio\click.wav" />
+    <Media Include="audio\gameLoop.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <Font Include="fonts\Montserrat-Bold.ttf" />
+    <Font Include="fonts\Montserrat-Italic.ttf" />
+    <Font Include="fonts\Montserrat-Regular.ttf" />
+  </ItemGroup>
+  <ItemGroup>
+    <Image Include="textures\bg.jpg" />
+    <Image Include="textures\bill1.jpg" />
+    <Image Include="textures\bill2.jpg" />
+    <Image Include="textures\car1.png" />
+    <Image Include="textures\car2.png" />
+    <Image Include="textures\car_left.png" />
+    <Image Include="textures\car_mid.png" />
+    <Image Include="textures\car_right.png" />
+    <Image Include="textures\splash.png" />
+    <Image Include="textures\tree1.png" />
+    <Image Include="textures\tree2.png" />
+  </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
   </ImportGroup>

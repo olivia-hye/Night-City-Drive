@@ -16,6 +16,7 @@ private:
     
     float spriteX;
     sf::Sprite obstacle;
+    //sf::FloatRect obstacle_collider;
 
 public:
     Line() { spriteX = curve = x = y = z = 0; }
@@ -29,9 +30,9 @@ public:
     }
 
     void drawObstacle(sf::RenderWindow& window) {
-        sf::Sprite s = obstacle;
-        int obsW = s.getTextureRect().width;
-        int obsH = s.getTextureRect().height;
+        sf::Sprite obs = obstacle;
+        int obsW = obs.getTextureRect().width;
+        int obsH = obs.getTextureRect().height;
 
         float destX = sX + scale * spriteX * width / 2;
         float destY = sY;
@@ -41,17 +42,25 @@ public:
         destX += destW * spriteX;
         destY += destH * (-1);
 
-        s.setScale(destW / obsW, destH / obsH);
-        s.setPosition(destX, destY);
+        obs.setScale(destW / obsW, destH / obsH);
+        obs.setPosition(destX, destY);
 
-        window.draw(s);
+        //obstacle_collider = obs.getGlobalBounds();
+
+        window.draw(obs);
     }
+
+    /*sf::FloatRect getObstacleBounds()
+    {
+        return obstacle_collider;
+    }*/
 
     float getx() { return x; }
     float gety() { return y; }
-    float getX() { return sX; }
-    float getY() { return sY; }
-    float getW() { return sW; }
+    float getz() { return z; }
+    float getSX() { return sX; }
+    float getSY() { return sY; }
+    float getSW() { return sW; }
     float getCurve() { return curve; }
 
     friend void generateLines();
