@@ -1,8 +1,10 @@
+#ifndef PROJECTION_H
+#define PROJECTION_H
+
 #include "DEFINITONS.h"
 
 int height = SCREEN_HEIGHT;
 int width = SCREEN_WIDTH;
-
 float cameraDepth = CAMERA_DEPTH;
 int roadWidth = ROAD_WIDTH;
 int segmentLength = SEGMENT_LENGTH;
@@ -13,13 +15,13 @@ private:
     float sX, sY, sW; //Projected Coordinates
     float curve;
     float scale;
-    
-    float spriteX;
+    float obstacleX;
     sf::Sprite obstacle;
+
     //sf::FloatRect obstacle_collider;
 
 public:
-    Line() { spriteX = curve = x = y = z = 0; }
+    Line() { obstacleX = curve = x = y = z = 0; }
     ~Line() {}
 
     void project(int camX, int camY, int camZ) {
@@ -34,12 +36,12 @@ public:
         int obsW = obs.getTextureRect().width;
         int obsH = obs.getTextureRect().height;
 
-        float destX = sX + scale * spriteX * width / 2;
+        float destX = sX + scale * obstacleX * width / 2;
         float destY = sY;
         float destW = obsW * sW / 266;
         float destH = obsH * sW / 266;
 
-        destX += destW * spriteX;
+        destX += destW * obstacleX;
         destY += destH * (-1);
 
         obs.setScale(destW / obsW, destH / obsH);
@@ -50,10 +52,7 @@ public:
         window.draw(obs);
     }
 
-    /*sf::FloatRect getObstacleBounds()
-    {
-        return obstacle_collider;
-    }*/
+    //sf::FloatRect getObstacleBounds(){return obstacle_collider;}
 
     float getx() { return x; }
     float gety() { return y; }
@@ -66,3 +65,5 @@ public:
     friend void generateLines();
     friend void generateObstacles(sf::Sprite[]);
 };
+
+#endif PROJECTION_H

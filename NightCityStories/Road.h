@@ -1,3 +1,6 @@
+#ifndef ROAD_H
+#define ROAD_H
+
 #include "DEFINITONS.h"
 
 class createShape{
@@ -18,3 +21,5 @@ public:
 
     ~createShape() {}
 };
+
+#endif // ROAD_H

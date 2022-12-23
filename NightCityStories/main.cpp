@@ -54,13 +54,19 @@ int main(){
     }
     /* ------------------------------------------- */
 
-    /* ---------------- TEXT INITIALIZATION ---------------- */
+    /* ---------------- SPEED TEXT INITIALIZATION ---------------- */
     sf::Font font;
     if (!font.loadFromFile(FONT_PATH)) {}
-    sf::Text text;
-    text.setPosition(80, 25);
-    text.setFont(font);
-    /* ----------------------------------------------------- */
+    sf::Text speedText;
+    speedText.setPosition(80, 25);
+    speedText.setFont(font);
+    /* ----------------------------------------------------------- */
+
+    /* ---------------- TIME TEXT INITIALIZATION ----------------
+    sf::Text timeText;
+    timeText.setPosition(180, 25);
+    timeText.setFont(font);
+     ---------------------------------------------------------- */
 
     /* - CIRCUIT INITIALIZATION - */
     generateLines();
@@ -80,21 +86,23 @@ int main(){
     int brake = 10;
     /* ------------------------------- */
 
-
     /* ---------- GAME START ---------- */
     window.draw(splash);
     window.display();
     std::cout << "GAME IS RUNNING \n \n";
     Sleep(SPLASH_SHOW_TIME);
 
+    //sf::Clock clock;
+    //sf::Time elapsed = clock.getElapsedTime();
     //carEngine.play();
+
     /* -------------------------------- */
 
     /* -------------------- GAME MUSIC -------------------- */
     sf::Music gameMusic;
     if (!gameMusic.openFromFile("audio/gameLoop.wav")) {}
     gameMusic.setLoop(true);
-    gameMusic.setVolume(80);
+    gameMusic.setVolume(50);
     gameMusic.play();
     /* ---------------------------------------------------- */
 
@@ -159,8 +167,11 @@ int main(){
         /* ----------------------------------------------------------------------------------- */
         
         /* --------------------------- DRAW TEXT --------------------------- */
-        text.setString("Speed: " + std::to_string(accelerate / 4) + "KM/H");
-        window.draw(text);
+        speedText.setString("Speed: " + std::to_string(accelerate / 4) + "KM/H");
+        window.draw(speedText);
+
+        //timeText.setString("Time Remaining: " + std::to_string(elapsed.asSeconds()));
+        //window.draw(timeText);
         /* ----------------------------------------------------------------- */
 
         window.draw(car);
@@ -168,7 +179,6 @@ int main(){
     }
     return 0;
 }
-
 
 /*      NCS UNUSED CODE
 * 
@@ -183,8 +193,6 @@ int main(){
         //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Down)){car.move(0, downMove);}
         //if (sf::Keyboard::isKeyPressed(sf::Keyboard::Q)){car.rotate(leftMove);}
         //if (sf::Keyboard::isKeyPressed(sf::Keyboard::E)){car.rotate(rightMove);}
-
-
 
         /*
         createRoad(window, sf::Color(90, 10, 40), 0, 720, 1280, 0, 520, 1280);
